@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="Adw" version="1.0"/>
+  <object class="GtkAdjustment" id="adjustment">
+    <property name="upper">1000</property>
+    <property name="lower">0</property>
+    <property name="value">10</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+
+  <template class="InitiativeAddCharacterDialog" parent="AdwWindow">
+    <property name="default-width">200</property>
+    <property name="default-height">100</property>
+    <property name="content">
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkHeaderBar">
+            <property name="title-widget">
+              <object class="AdwWindowTitle">
+                <property name="title">New character</property>
+              </object>
+            </property>
+          </object>
+        </child>
+        <child>
+          <object class="AdwClamp">
+            <property name="child">
+              <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <property name="margin-top">24</property>
+                <property name="margin-bottom">24</property>
+                <property name="margin-start">12</property>
+                <property name="margin-end">12</property>
+                <property name="spacing">24</property>
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label">Character name</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkEntry" id="char_name"/>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label">Initiative</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkSpinButton" id="char_initiative">
+                        <property name="width-chars">2</property>
+                        <property name="max-width-chars">2</property>
+                        <property name="adjustment">adjustment</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label">Max HP</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkSpinButton" id="char_max_hp">
+                        <property name="width-chars">2</property>
+                        <property name="max-width-chars">2</property>
+                        <property name="adjustment">adjustment</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">horizontal</property>
+                    <property name="homogeneous">true</property>
+                    <property name="spacing">4</property>
+                    <child>
+                      <object class="GtkButton" id="char_ok">
+                        <property name="label">OK</property>
+                      </object>
+                    </child>
+                    <child>
+                      <object class="GtkButton" id="char_cancel">
+                        <property name="label">Cancel</property>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+              </object>
+            </property>
+          </object>
+        </child>
+      </object>
+    </property>
+  </template>
+</interface>

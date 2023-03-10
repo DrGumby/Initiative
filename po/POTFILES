@@ -1,0 +1,6 @@
+data/com.DrGumby.Initiative.desktop.in
+data/com.DrGumby.Initiative.appdata.xml.in
+data/com.DrGumby.Initiative.gschema.xml
+src/main.vala
+src/window.vala
+src/window.ui
