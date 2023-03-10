@@ -1,4 +1,4 @@
-/* window.vala
+/* character_list.vala
  *
  * Copyright 2023 Kamil Vojanec
  *
@@ -26,16 +26,41 @@ namespace Initiative {
         private unowned Gtk.ListBox list_box;
 
         [GtkChild]
-        private unowned Gtk.Button add_item;
+        private unowned Adw.ActionRow add_item_row;
+
+        [GtkChild]
+        private unowned Gtk.Button add_item_button;
 
         construct {
-            this.add_item.clicked.connect (add_character_dialog);
+            this.add_item_button.clicked.connect (add_character_dialog);
+            this.list_box.set_sort_func (this.list_box_sort_func);
+        }
+
+        private int list_box_sort_func (Gtk.ListBoxRow a, Gtk.ListBoxRow b) {
+            if (a.get_id () == this.add_item_row.get_id ()) {
+                return 1;
+            }
+
+            else {
+                var a_char = a as CharacterLine;
+                var b_char = b as CharacterLine;
+
+                return (int) b_char.val_initiative - (int) a_char.val_initiative;
+            }
+        }
+
+        public void remove_line (CharacterLine line) {
+            this.list_box.remove (line);
         }
 
         private void add_character_dialog () {
             AddCharacterDialog win = new AddCharacterDialog ();
             win.present ();
-            win.ok_with_data.connect ((data) => {stdout.printf("Got data %s\n", data.name);});
+            win.ok_with_data.connect ((data) => {
+                stdout.printf("Got data %s\n", data.name);
+                var line = new CharacterLine (data, this);
+                this.list_box.append (line);
+            });
             win.cancel_empty.connect (() => {});
         }
     }

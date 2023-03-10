@@ -47,6 +47,7 @@ namespace Initiative {
         [GtkChild]
         private unowned Gtk.Button char_cancel;
 
+
         construct {
             this.char_ok.clicked.connect (this.on_ok);
             this.char_cancel.clicked.connect (this.on_cancel);

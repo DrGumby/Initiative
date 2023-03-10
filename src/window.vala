@@ -29,6 +29,11 @@ namespace Initiative {
         }
 
         construct {
+            Gtk.CssProvider css_provider = new Gtk.CssProvider ();
+            string str = "row.dead { background-color: #451000; }";
+            css_provider.load_from_data ((uint8[]) str);
+
+            Gtk.StyleContext.add_provider_for_display (this.display, css_provider, 0);
         }
     }
 }

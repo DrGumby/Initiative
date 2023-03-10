@@ -2,7 +2,15 @@
 <interface>
   <requires lib="gtk" version="4.0"/>
   <requires lib="Adw" version="1.0"/>
-  <object class="GtkAdjustment" id="adjustment">
+  <object class="GtkAdjustment" id="adjustment_initiative">
+    <property name="upper">1000</property>
+    <property name="lower">0</property>
+    <property name="value">10</property>
+    <property name="step-increment">1</property>
+    <property name="page-increment">10</property>
+  </object>
+
+  <object class="GtkAdjustment" id="adjustment_max_hp">
     <property name="upper">1000</property>
     <property name="lower">0</property>
     <property name="value">10</property>
@@ -60,7 +68,7 @@
                       <object class="GtkSpinButton" id="char_initiative">
                         <property name="width-chars">2</property>
                         <property name="max-width-chars">2</property>
-                        <property name="adjustment">adjustment</property>
+                        <property name="adjustment">adjustment_initiative</property>
                       </object>
                     </child>
                   </object>
@@ -77,7 +85,7 @@
                       <object class="GtkSpinButton" id="char_max_hp">
                         <property name="width-chars">2</property>
                         <property name="max-width-chars">2</property>
-                        <property name="adjustment">adjustment</property>
+                        <property name="adjustment">adjustment_max_hp</property>
                       </object>
                     </child>
                   </object>

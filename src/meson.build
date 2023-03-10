@@ -3,7 +3,8 @@ initiative_sources = [
   'application.vala',
   'window.vala',
   'add_character_dialog.vala',
-  'character_list.vala'
+  'character_list.vala',
+  'character_line.vala'
 ]
 
 initiative_deps = [

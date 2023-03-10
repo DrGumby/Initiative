@@ -10,15 +10,46 @@
     <property name="margin-end">12</property>
     <property name="spacing">24</property>
     <child>
+      <object class="GtkBox">
+        <property name="orientation">horizontal</property>
+        <property name="homogeneous">true</property>
+        <child>
+          <object class="GtkLabel">
+            <property name="label">Name</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="label">Initiative</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="label">HP</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="label">Max HP</property>
+          </object>
+        </child>
+        <child>
+          <object class="GtkLabel">
+            <property name="label"></property>
+          </object>
+        </child>
+      </object>
+    </child>
+    <child>
       <object class="GtkListBox" id="list_box">
         <property name="selection-mode">none</property>
         <style>
           <class name="boxed-list"/>
         </style>
         <child>
-          <object class="AdwActionRow">
+          <object class="AdwActionRow" id="add_item_row">
             <property name="child">
-              <object class="GtkButton" id="add_item">
+              <object class="GtkButton" id="add_item_button">
                 <property name="label">Add</property>
               </object>
             </property>
