@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="Adw" version="1.0"/>
+  <template class="InitiativeCharacterListBox" parent="GtkBox">
+    <property name="orientation">vertical</property>
+    <property name="margin-top">24</property>
+    <property name="margin-bottom">24</property>
+    <property name="margin-start">12</property>
+    <property name="margin-end">12</property>
+    <property name="spacing">24</property>
+    <child>
+      <object class="GtkListBox" id="list_box">
+        <property name="selection-mode">none</property>
+        <style>
+          <class name="boxed-list"/>
+        </style>
+        <child>
+          <object class="AdwActionRow">
+            <property name="child">
+              <object class="GtkButton" id="add_item">
+                <property name="label">Add</property>
+              </object>
+            </property>
+          </object>
+        </child>
+      </object>
+    </child>
+  </template>
+</interface>

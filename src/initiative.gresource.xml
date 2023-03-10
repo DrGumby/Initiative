@@ -3,6 +3,7 @@
   <gresource prefix="/com/DrGumby/Initiative">
     <file preprocess="xml-stripblanks">window.ui</file>
     <file preprocess="xml-stripblanks">add_character_dialog.ui</file>
+    <file preprocess="xml-stripblanks">character_list.ui</file>
     <file preprocess="xml-stripblanks">gtk/help-overlay.ui</file>
   </gresource>
 </gresources>

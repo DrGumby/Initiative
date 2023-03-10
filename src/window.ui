@@ -10,12 +10,6 @@
         <property name="orientation">vertical</property>
         <child>
           <object class="GtkHeaderBar" id="header_bar">
-            <child type="start">
-              <object class="GtkButton" id="add_character">
-                <property name="label">+</property>
-                <property name="action-name">win.add</property>
-              </object>
-            </child>
             <child type="end">
               <object class="GtkMenuButton">
                 <property name="icon-name">open-menu-symbolic</property>
@@ -27,32 +21,7 @@
         <child>
           <object class="AdwClamp">
             <property name="child">
-              <object class="GtkBox">
-                <property name="orientation">vertical</property>
-                <property name="margin-top">24</property>
-                <property name="margin-bottom">24</property>
-                <property name="margin-start">12</property>
-                <property name="margin-end">12</property>
-                <property name="spacing">24</property>
-                <child>
-                  <object class="GtkListBox" id="list_box">
-                    <property name="selection-mode">none</property>
-                    <style>
-                      <class name="boxed-list"/>
-                    </style>
-                    <child>
-                      <object class="AdwActionRow">
-                        <property name="child">
-                          <object class="GtkButton" id="add_item">
-                            <property name="label">Add</property>
-                            <property name="action-name">win.add</property>
-                          </object>
-                        </property>
-                      </object>
-                    </child>
-                  </object>
-                </child>
-              </object>
+              <object class="InitiativeCharacterListBox" id="char_list_box"/>
             </property>
           </object>
         </child>

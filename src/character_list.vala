@@ -19,16 +19,24 @@
  */
 
 namespace Initiative {
-    [GtkTemplate (ui = "/com/DrGumby/Initiative/window.ui")]
-    public class Window : Adw.ApplicationWindow {
-        [GtkChild]
-        private unowned CharacterListBox char_list_box;
+    [GtkTemplate (ui = "/com/DrGumby/Initiative/character_list.ui")]
+    public class CharacterListBox : Gtk.Box {
 
-        public Window (Gtk.Application app) {
-            Object (application: app);
-        }
+        [GtkChild]
+        private unowned Gtk.ListBox list_box;
+
+        [GtkChild]
+        private unowned Gtk.Button add_item;
 
         construct {
+            this.add_item.clicked.connect (add_character_dialog);
+        }
+
+        private void add_character_dialog () {
+            AddCharacterDialog win = new AddCharacterDialog ();
+            win.present ();
+            win.ok_with_data.connect ((data) => {stdout.printf("Got data %s\n", data.name);});
+            win.cancel_empty.connect (() => {});
         }
     }
 }
