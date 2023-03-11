@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=initiative
+Exec=initiative
+Icon=com.DrGumby.Initiative
+Terminal=false
+Type=Application
+Categories=GTK;
+StartupNotify=true
